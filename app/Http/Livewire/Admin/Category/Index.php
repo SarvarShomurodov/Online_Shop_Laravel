@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Http\Livewire\Admin\Category;
+
+use Livewire\Component;
+use App\Models\Categoris;
+use Livewire\WithPagination;
+
+class Index extends Component
+{
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+    public function render()
+    {   
+        $categories = Categoris::orderBy('id', 'desc')->paginate(10);
+        return view('livewire.admin.category.index',['categories'=> $categories]);
+    }
+}
