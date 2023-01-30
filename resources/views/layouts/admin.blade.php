@@ -28,7 +28,7 @@
     <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" />
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+    @livewireStyles
 </head>
     <body>
         <div class="container-scroller">
@@ -59,5 +59,7 @@
     <!-- endinjec{{asset('')}}t -->
     <!-- Custom j{{asset('')}}s for this page -->
     <script src="{{asset('admin/js/dashboard.js ')}}"></script>
+    @livewireScripts
+    @stack('script')
     </body>
 </html>
