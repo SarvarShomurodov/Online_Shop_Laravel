@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Admin\Brand\Index;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 
@@ -28,11 +29,12 @@ Route::prefix('/admin')->middleware(['isAdmin','auth'])->group(function(){
     Route::get('/dashboard', [AdminController::class, 'index']);
 
     //category
-
     Route::get('/category', [CategoryController::class, 'index']);
     Route::get('/category/create', [CategoryController::class, 'create']);
     Route::post('/category', [CategoryController::class, 'store']);
     Route::get('/category/{category}/edit', [CategoryController::class, 'edit']);
     Route::put('/category/{category}', [CategoryController::class, 'update']);
+    //Brands
+    Route::get('/brands',Index::class);
 });
 
